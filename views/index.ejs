@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <% include partials/head %>
+        <%- include('partials/head.ejs') -%>
     </head>
     <body>
-        <% include partials/menu %>
+        <%- include('partials/menu.ejs') -%>
         <div class="container-fluid bg-3 text-center">
             <h3><%= page %></h3><br>
             <div class="row">
@@ -21,5 +21,5 @@
             </div>
         </div>
     </body>
-    <% include partials/script %>
+    <%- include('partials/script.ejs') -%>
 </html>
