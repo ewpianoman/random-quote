@@ -1,5 +1,4 @@
-{
-  "quotes": [
+[
     {
       "quote": "Be yourself; everyone else is already taken.",
       "author": "Oscar Wilde"
@@ -104,5 +103,4 @@
       "quote": "I have not failed. I've just found 10,000 ways that won't work.",
       "author": "Thomas A. Edison"
     }
-  ]
-}
+]

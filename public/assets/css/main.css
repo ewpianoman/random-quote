@@ -2,10 +2,12 @@
     background-color: #ffffff;
     color: #555555;
 }
+
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
 }
+
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -15,9 +17,21 @@
     font-size: 12px;
     letter-spacing: 5px;
 }
+
+.navbar-brand img {
+    width: 175px;
+    position: relative;
+    bottom: 15px;
+}
+
+.navbar-nav li a {
+    border-radius: 5px;
+}
+
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
+
 .active>a {
     color: #1abc9c !important;;
 }
