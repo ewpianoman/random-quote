@@ -12,11 +12,44 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'MOMENTO',
-        page: 'Home',
-        menuId: 'home'
-    })
+
+    jsonReader('./data/quotes.json', (err, quotes) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        let random = getRandomInt(quotes.length);
+        res.render('index', {
+            title: 'MOMENTO',
+            page: 'Home',
+            menuId: 'home',
+            rand: random,
+            quote: quotes[random]
+        })
+    });
+});
+
+app.get('/api', (req, res) => {
+
+    jsonReader('./data/quotes.json', (err, quotes) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        res.json(quotes);
+    });
+});
+
+app.get('/api/random', (req, res) => {
+
+    jsonReader('./data/quotes.json', (err, quotes) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        let random = getRandomInt(quotes.length);
+        res.json(quotes[random]);
+    });
 });
 
 app.listen(port, (err) => {
@@ -37,4 +70,9 @@ function jsonReader(filePath, cb) {
             return cb && cb(err);
         }
     });
+}
+
+// Random Number Helper Function
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }

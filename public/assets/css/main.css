@@ -1,6 +1,13 @@
-.bg-3 {
-    background-color: #ffffff;
-    color: #555555;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("/assets/images/light-bg-1.jpeg");
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .container-fluid {
@@ -15,23 +22,55 @@
     border-radius: 0;
     margin-bottom: 0;
     font-size: 12px;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
+    font-size: .9em;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .navbar-brand img {
     width: 175px;
-    position: relative;
-    bottom: 15px;
 }
 
-.navbar-nav li a {
-    border-radius: 5px;
+.navbar-brand:hover {
+    opacity: 0.5;
+}
+
+.navbar-nav li a:hover {
+    opacity: 0.6;
 }
 
 .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: #7090A5 !important;
 }
 
 .active>a {
-    color: #1abc9c !important;;
+    color: #7090A5 !important;;
+}
+
+#quote {
+    height: calc(100vh - 96px);
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#quote div {
+    margin: 0 5%;
+}
+
+#new-quote {
+    margin-top: 150px;
+    background-color: #7090A5;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FFF;
+    opacity: 0.4;
+}
+
+#new-quote:hover {
+    opacity: 1.0;
+    transition: all .4s;
 }
