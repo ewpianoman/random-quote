@@ -1,9 +1,26 @@
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+#quote {
     background-image: url("/assets/images/light-bg-1.jpeg");
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
+    height: 100vh;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    padding-top: 150px;
+}
+
+.main {
+    margin-top: 75px;
+}
+
+.item {
+    margin: 25px 0;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -16,7 +33,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .navbar {
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 15px;
     border: 0;
     border-radius: 0;
@@ -24,7 +41,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-size: 12px;
     letter-spacing: 4px;
     font-size: .9em;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.0) !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 .navbar-brand img {
@@ -44,13 +66,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .active>a {
-    color: #7090A5 !important;;
-}
-
-#quote {
-    height: calc(100vh - 96px);
-    flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.5);
+    color: #7090A5 !important;
+    font-weight: bold;
 }
 
 #quote div {
@@ -70,7 +87,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     opacity: 0.4;
 }
 
+.page-link, .page-link:hover {
+    color: #7090A5;
+}
+
+.page-item.active .page-link {
+    background-color: #7090A5 !important;
+    color: #FFFFFF !important;
+    border-color: #7090A5;
+}
+
 #new-quote:hover {
     opacity: 1.0;
     transition: all .4s;
+}
+
+.card {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
 }

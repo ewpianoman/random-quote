@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') -%>
+    </head>
+    <body>
+
+        <%- include('partials/menu.ejs') -%>
+        <div class="container-fluid main text-center">
+            <div class="card">
+                <div class="card-header">
+                    <div style="margin-top: 15px; max-width: 350px;" class="float-start">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <%- include('partials/pagination.ejs') -%>
+                </div>
+                <ul class="list-group list-group-flush" id="quotes-target">
+                    <% quotes.forEach((quote) => { %>
+                        <li class="list-group-item">
+                            <figure class="item">
+                                <blockquote class="blockquote">
+                                    <p>&ldquo;<%= quote.quote %>&rdquo;</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                    <%= quote.author %>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    <% }); %>
+                </ul>
+                <div class="card-footer">
+                    <%- include('partials/pagination.ejs') -%>
+                </div>
+            </div>
+        </div>
+    </body>
+    <%- include('partials/script.ejs') -%>
+    <script src="/assets/js/library.js"></script>
+</html>

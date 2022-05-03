@@ -12,7 +12,6 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/', (req, res) => {
-
     jsonReader('./data/quotes.json', (err, quotes) => {
         if (err) {
             console.log(err);
@@ -23,8 +22,31 @@ app.get('/', (req, res) => {
             title: 'MOMENTO',
             page: 'Home',
             menuId: 'home',
-            rand: random,
             quote: quotes[random]
+        })
+    });
+});
+
+app.get('/library', (req, res) => {
+
+    jsonReader('./data/quotes.json', (err, quotes) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        let quotesList = [];
+        let quoteTotal = quotes.length;
+        for (let i = 0; i < 5; i++) {
+            if (quotes[i]) {
+                quotesList.push(quotes[i]);
+            }
+        }
+        res.render('library', {
+            title: 'MOMENTO',
+            page: 'Quote Library',
+            menuId: 'library',
+            total: quoteTotal,
+            quotes: quotesList
         })
     });
 });
