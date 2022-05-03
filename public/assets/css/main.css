@@ -107,3 +107,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+.card-header .btn-outline-success {
+    color: #7090A5;
+    border-color: #7090A5;
+    outline-color: #7090A5;
+}
+
+.card-header .btn-outline-success:hover {
+    color: #FFF;
+    background-color: #7090A5;
+}
+
+.card-header .btn-outline-success:focus {
+    box-shadow: none;
+}
+
+.page-link:hover {
+    cursor: pointer;
+}
