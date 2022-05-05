@@ -91,6 +91,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #7090A5;
 }
 
+.page-link {
+    user-select: none;
+}
+
 .page-item.active .page-link {
     background-color: #7090A5 !important;
     color: #FFFFFF !important;
@@ -112,6 +116,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #7090A5;
     border-color: #7090A5;
     outline-color: #7090A5;
+    background-color: #FFFFFF;
 }
 
 .card-header .btn-outline-success:hover {
@@ -125,4 +130,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .page-link:hover {
     cursor: pointer;
+}
+
+.page-link:focus {
+    color: #7090A5;
+    box-shadow: none;
 }

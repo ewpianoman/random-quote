@@ -1,9 +1,11 @@
 <nav aria-label="Quote Page Navigation" class="float-end"">
     <ul class="pagination" style="margin-top: 15px;">
-        <li class="page-item disabled previous"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item active"><a class="page-link">1</a></li>
-        <li class="page-item"><a class="page-link">2</a></li>
-        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item disabled previous"><a class="page-link">Previous</a></li>
+        <li class="page-item active"><a class="page-link pg">1</a></li>
+        <% for (let i = 2; i <= total / 5; i++) { %>
+        <li class="page-item"><a class="page-link pg"><%= i %></a></li>
+        <% } %>
+
         <li class="page-item next"><a class="page-link">Next</a></li>
     </ul>
 </nav>
