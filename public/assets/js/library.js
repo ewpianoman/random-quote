@@ -58,7 +58,8 @@ paginationUls.forEach(item => {
 
 // Get subset of quotes based on current page
 function getQuotes(page, offset = 5) {
-    getJSON('/api')
+    fetch('/api')
+        .then(response => response.json())
         .then(data => {
             const indexStart = (page - 1) * offset;
             const indexEnd = indexStart + offset;
