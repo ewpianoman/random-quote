@@ -3,7 +3,11 @@
         <li class="page-item disabled previous"><a class="page-link">Previous</a></li>
         <li class="page-item active"><a class="page-link pg">1</a></li>
         <% for (let i = 2; i <= total / 5; i++) { %>
-        <li class="page-item"><a class="page-link pg"><%= i %></a></li>
+            <% if (i < 4) { %>
+                <li class="page-item"><a class="page-link pg"><%= i %></a></li>
+            <% } else { %>
+                <li class="page-item d-none"><a class="page-link pg"><%= i %></a></li>
+            <% } %>
         <% } %>
 
         <li class="page-item next"><a class="page-link">Next</a></li>

@@ -14,6 +14,19 @@ paginationUls.forEach(item => {
             if (isNaN(parseInt(target))) {
                 if (target.toLowerCase() === 'previous' && referrer > 1) {
                     let previousPage = referrer - 1;
+                    if (document.querySelectorAll('.page-item')[4].classList.contains('active')) {
+                        for (let i = 5; i > 3; i--) {
+                            document.querySelectorAll('.pagination')[0].querySelectorAll('.page-item')[i].classList.add('d-none');
+                            document.querySelectorAll('.pagination')[1].querySelectorAll('.page-item')[i].classList.add('d-none');
+                        }
+
+                        for (let i = 3; i > 0; i--) {
+                            if (document.querySelectorAll('.page-item')[i]) {
+                                document.querySelectorAll('.pagination')[0].querySelectorAll('.page-item')[i].classList.remove('d-none');
+                                document.querySelectorAll('.pagination')[1].querySelectorAll('.page-item')[i].classList.remove('d-none');
+                            }
+                        }
+                    }
                     currentPages[0].classList.remove('active');
                     currentPages[1].classList.remove('active');
                     currentPages[0].previousElementSibling.classList.add('active');
@@ -22,6 +35,19 @@ paginationUls.forEach(item => {
                 } else if (target.toLowerCase() === 'next' && referrer < document.querySelectorAll('.pg').length) {
                     let nextPage = referrer + 1;
                     getQuotes(nextPage);
+                    if (document.querySelectorAll('.page-item')[3].classList.contains('active')) {
+                        for (let i = 1; i < 4; i++) {
+                            document.querySelectorAll('.pagination')[0].querySelectorAll('.page-item')[i].classList.add('d-none');
+                            document.querySelectorAll('.pagination')[1].querySelectorAll('.page-item')[i].classList.add('d-none');
+                        }
+
+                        for (let i = 4; i < 7; i++) {
+                            if (document.querySelectorAll('.page-item')[i]) {
+                                document.querySelectorAll('.pagination')[0].querySelectorAll('.page-item')[i].classList.remove('d-none');
+                                document.querySelectorAll('.pagination')[1].querySelectorAll('.page-item')[i].classList.remove('d-none');
+                            }
+                        }
+                    }
                     currentPages[0].classList.remove('active');
                     currentPages[1].classList.remove('active');
                     currentPages[0].nextElementSibling.classList.add('active');
